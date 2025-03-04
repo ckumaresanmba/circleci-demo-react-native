@@ -1,6 +1,8 @@
 version: 2
 jobs:
   version-check:
+    docker:
+      - image: circleci/python:3.8
     steps:
       - run:
         name: Version Check
@@ -8,6 +10,7 @@ jobs:
   build-and-test:
     macos:
       xcode: "9.0"
+      resource_class: macos.x86.medium.gen2
     steps:
       - checkout
       - run:
