@@ -1,5 +1,10 @@
 version: 2
 jobs:
+  version-check:
+    steps:
+      - run:
+        name: Version Check
+        cmd: circleci platform macos image list
   build-and-test:
     macos:
       xcode: "9.0"
@@ -18,5 +23,6 @@ workflows:
   build-and-test-workflow:
     jobs:
       - build-and-test
+      - version-check
         
       
