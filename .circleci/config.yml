@@ -5,8 +5,8 @@ jobs:
       - image: circleci/python:3.8
     steps:
       - run:
-        name: Version Check
-        command: circleci platform macos image list
+          name: Version Check
+          command: circleci platform macos image list
   build-and-test:
     macos:
       xcode: "9.0"
